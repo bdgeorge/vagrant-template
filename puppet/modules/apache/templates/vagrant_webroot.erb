@@ -1,0 +1,24 @@
+<VirtualHost *:80>
+    ServerName <%= @site_name %>
+    DocumentRoot /vagrant/web
+    <Directory /vagrant/web>
+        DirectoryIndex index.php index.html
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+<VirtualHost *:443>
+    ServerName <%= @site_name %>
+    DocumentRoot /vagrant/web
+    <Directory /vagrant/web>
+        DirectoryIndex index.php index.html
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+    SSLEngine on
+    SSLCertificateFile    /etc/ssl/certs/ssl-cert-snakeoil.pem
+    SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
+</VirtualHost>
+

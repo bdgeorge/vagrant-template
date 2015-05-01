@@ -1,0 +1,17 @@
+; html_errors
+html_errors = On
+error_log = /var/log/apache2/php_error_<%= @site_name %>.log
+mail.log = /var/log/apache2/php_mail_error_<%= @site_name %>.log
+
+
+; xdebug
+xdebug.remote_enable = 1
+xdebug.remote_connect_back = 1
+xdebug.remote_port = 9000
+xdebug.scream=0
+xdebug.cli_color=1
+xdebug.show_local_vars=1
+
+;Mailcatcher
+sendmail_path =  /home/vagrant/.rbenv/shims/catchmail -f dev@local.comexit
+
